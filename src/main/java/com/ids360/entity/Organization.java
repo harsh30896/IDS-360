@@ -17,7 +17,7 @@ import java.util.UUID;
 public class Organization {
 
     @Id
-    private UUID userId;
+    private UUID id;
     private String name;
     private String domain;
     private Instant createdAt;
@@ -26,7 +26,7 @@ public class Organization {
     @Override
     public String toString() {
         return "Organization{" +
-                "userId=" + userId +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", domain='" + domain + '\'' +
                 ", createdAt=" + createdAt +

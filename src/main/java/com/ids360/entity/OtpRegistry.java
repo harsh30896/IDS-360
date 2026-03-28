@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.Instant;
+import java.util.UUID;
 
 @Entity
 @AllArgsConstructor
@@ -19,7 +20,7 @@ import java.time.Instant;
 public class OtpRegistry {
 
     @Id
-    private Long id;
+    private UUID id;
     private String identifier;
     private String otpCode;
     private String type;

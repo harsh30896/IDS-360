@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.time.Instant;
+import java.util.UUID;
 
 
 @Entity
@@ -17,7 +18,7 @@ import java.time.Instant;
 public class User {
 
     @Id
-    private Long userId;
+    private UUID userId;
     private String email;
     private String passwordHash;
     private String firstName;

@@ -1,4 +1,4 @@
-package com.ids360.entity;
+package com.ids360.enums;
 
 public enum OtpType {
     LOGIN,

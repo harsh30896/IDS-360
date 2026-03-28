@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.time.Instant;
+import java.util.UUID;
 
 @Entity
 @Getter
@@ -16,7 +17,7 @@ import java.time.Instant;
 public class UserOrganizationRole {
 
     @Id
-    private Long userOrganizationRoleId;
+    private UUID userOrganizationRoleId;
     private Long userId;
     private Long organizationId;
     private Long roleId;

@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.time.Instant;
+import java.util.UUID;
 
 @Entity
 @AllArgsConstructor
@@ -16,9 +17,9 @@ import java.time.Instant;
 public class Role {
 
     @Id
-    private Long roleId;
+    private UUID roleId;
     private String name;
-    private String organization;
+    private UUID organizationId;
     private Instant createdAt;
 
     @Override
@@ -26,7 +27,7 @@ public class Role {
         return "Role{" +
                 "roleId=" + roleId +
                 ", name='" + name + '\'' +
-                ", organization='" + organization + '\'' +
+                ", organizationId='" + organizationId + '\'' +
                 ", createdAt=" + createdAt +
                 '}';
     }

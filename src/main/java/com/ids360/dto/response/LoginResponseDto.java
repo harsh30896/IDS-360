@@ -5,18 +5,22 @@
     import lombok.NoArgsConstructor;
     import lombok.Setter;
 
+    import java.util.UUID;
+    import java.util.List;
+    import com.ids360.entity.UserOrganizationRole;
+
     @Getter
     @Setter
     @AllArgsConstructor
     @NoArgsConstructor
     public class LoginResponseDto {
 
-        private String userId;
+        private UUID userId;
         private String email;
         private String firstName;
         private String lastName;
-        private String requiresOrgSelection;
-        private String organizations;
+        private boolean requiresOrgSelection;
+        private List<UserOrganizationRole> organizations;
 
         @Override
         public String toString() {

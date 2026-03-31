@@ -9,7 +9,6 @@ import lombok.Setter;
 import java.time.Instant;
 import java.util.UUID;
 
-
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -29,6 +28,7 @@ public class User {
     private Instant accountExpiresAt;
     private Instant createdAt;
     private Instant updateAt;
+    private String organizations;
 
     @Override
     public String toString() {
@@ -44,6 +44,7 @@ public class User {
                 ", accountExpiresAt=" + accountExpiresAt +
                 ", createdAt=" + createdAt +
                 ", updateAt=" + updateAt +
+                ", organizations='" + organizations + '\'' +
                 '}';
     }
 }

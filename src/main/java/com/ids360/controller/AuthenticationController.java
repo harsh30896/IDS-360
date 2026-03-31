@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Optional;
-
 @RestController
 @RequestMapping("/api/v1/auth")
 public class AuthenticationController {
@@ -20,8 +18,8 @@ public class AuthenticationController {
     AuthService authService;
 
     @PostMapping("/login")
-    public ResponseEntity<?> loginWithUserNamePassword(@RequestBody LoginRequestDto loginRequestDto){
-       ResponseEntity<?> responseDto = authService.checkLoginRequest(loginRequestDto.getUsername(),loginRequestDto.getPassword());
-        return responseDto;
+    public ResponseEntity<LoginResponseDto> loginWithUserNamePassword(@RequestBody LoginRequestDto loginRequestDto){
+        LoginResponseDto responseDto = authService.checkLoginRequest(loginRequestDto.getUsername(), loginRequestDto.getPassword());
+        return ResponseEntity.ok(responseDto);
     }
 }

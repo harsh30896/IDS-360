@@ -7,7 +7,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.time.Instant;
-import java.util.UUID;
 
 @Entity
 @AllArgsConstructor
@@ -17,7 +16,7 @@ import java.util.UUID;
 public class AuditLog {
 
     @Id
-    private UUID id;
+    private String id;
     private Long userId;
     private String action;
     private String metadata;

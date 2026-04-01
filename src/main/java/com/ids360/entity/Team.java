@@ -7,7 +7,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.time.Instant;
-import java.util.UUID;
 
 
 @Entity
@@ -18,9 +17,9 @@ import java.util.UUID;
 public class Team {
 
     @Id
-    private UUID teamId;
+    private String teamId;
     private String name;
-    private UUID organizationId;
+    private String organizationId;
     private Instant createdAt;
 
     @Override

@@ -7,7 +7,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.time.Instant;
-import java.util.UUID;
 
 @Entity
 @AllArgsConstructor
@@ -17,9 +16,9 @@ import java.util.UUID;
 public class Role {
 
     @Id
-    private UUID roleId;
+    private String roleId;
     private String name;
-    private UUID organizationId;
+    private String organizationId;
     private Instant createdAt;
 
     @Override

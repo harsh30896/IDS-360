@@ -29,6 +29,11 @@ public class AuthServiceImpl implements AuthService {
     public LoginResponseDto checkLoginRequest(String username, String password) {
      User userData = userRepository.findByEmail(username);
      
+     System.out.println("=====================================");
+     System.out.println("GENERATED BCrypt HASH FOR '" + password + "':");
+     System.out.println(passwordEncoder.encode(password));
+     System.out.println("=====================================");
+     
      if (userData == null) {
          throw new InvalidCredentialsException("Invalid username or password");
      }

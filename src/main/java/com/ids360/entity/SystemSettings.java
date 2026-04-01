@@ -7,7 +7,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.UUID;
 
 @Entity
 @AllArgsConstructor
@@ -17,7 +16,7 @@ import java.util.UUID;
 public class SystemSettings {
 
     @Id
-    private UUID id;
+    private String id;
     private String appName;
     private String logoUri;
     private String themeJson;

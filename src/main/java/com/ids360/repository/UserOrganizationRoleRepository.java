@@ -4,10 +4,9 @@ import com.ids360.entity.UserOrganizationRole;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
-import java.util.UUID;
 
-public interface UserOrganizationRoleRepository extends JpaRepository<UserOrganizationRole,UUID> {
-    List<UserOrganizationRole> findByUserId(UUID userId);
-    List<UserOrganizationRole> findByOrganizationId(UUID organizationId);
-    List<UserOrganizationRole> findByUserIdAndOrganizationId(UUID userId, UUID orgId);
+public interface UserOrganizationRoleRepository extends JpaRepository<UserOrganizationRole,String> {
+    List<UserOrganizationRole> findByUserId(String userId);
+    List<UserOrganizationRole> findByOrganizationId(String organizationId);
+    List<UserOrganizationRole> findByUserIdAndOrganizationId(String userId, String orgId);
 }

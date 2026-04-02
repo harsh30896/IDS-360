@@ -19,15 +19,17 @@ public class Organization {
     private String id;
     private String name;
     private String domain;
+    private boolean isActive;
     private Instant createdAt;
     private Instant updatedAt;
 
     @Override
     public String toString() {
         return "Organization{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", domain='" + domain + '\'' +
+                ", isActive=" + isActive +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 '}';

@@ -24,5 +24,6 @@ public class TeamServiceImpl implements TeamService {
     public Team createTeam(TeamRequestDto teamRequestDto) {
       Optional<Organization> organizationalId = organizationRepository.findById(teamRequestDto.getOrganizationId());
         return null;
+
     }
 }

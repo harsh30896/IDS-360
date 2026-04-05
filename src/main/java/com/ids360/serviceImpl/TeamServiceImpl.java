@@ -9,7 +9,9 @@ import com.ids360.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class TeamServiceImpl implements TeamService {
@@ -22,8 +24,15 @@ public class TeamServiceImpl implements TeamService {
 
     @Override
     public Team createTeam(TeamRequestDto teamRequestDto) {
-      Optional<Organization> organizationalId = organizationRepository.findById(teamRequestDto.getOrganizationId());
-        return null;
-
+      Optional<Organization> organizationOptional = organizationRepository.findById(teamRequestDto.getOrganizationId());
+        if (organizationOptional.isEmpty()) {
+            throw new RuntimeException("Organization not found");
+        }
+        Team team = new Team();
+        team.setTeamId(UUID.randomUUID().toString());
+        team.setName(teamRequestDto.getName());
+        team.setOrganizationId(teamRequestDto.getOrganizationId());
+        team.setCreatedAt(Instant.now());
+        return teamRepository.save(team);
     }
 }
